@@ -10,8 +10,7 @@ export function Info() {
         <header>
           <h2>Cameron Williamson</h2>
           <div>
-            <a href="#">GITHUB</a>
-            <ArrowSquareOut weight='bold' />
+            <a href="#">GITHUB <ArrowSquareOut weight='bold' /></a>
           </div>
         </header>
         <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>

@@ -30,6 +30,7 @@ export const InfoContent = styled.div`
   header {
     display: flex;
     justify-content: space-between;
+    outline: none;
 
     div {
       color: ${(props) => props.theme.blue};
@@ -45,10 +46,21 @@ export const InfoContent = styled.div`
         font-weight: bold;
         line-height: 1rem;
         text-decoration: none;
-      }
 
-      svg {
-        margin-top: -0.2rem;
+        padding-bottom: 2px;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        svg {
+          margin-top: -0.2rem;
+        }
+
+        &:hover {
+          border-bottom: 1px solid ${(props) => props.theme.blue};
+          padding-bottom: 2px;
+        }
       }
     }
   }

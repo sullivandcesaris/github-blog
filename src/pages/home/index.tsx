@@ -1,20 +1,22 @@
 import { Header } from "../../components/Header";
-import { HomeContainer } from "./styles";
+import { PostsGithub } from "./components/PostsGithub";
+import { HeaderSearchForm, HomeContainer, HomeContent, SearchContent } from "./styles";
 
 export function Home() {
   return (
     <>
       <Header/>
       <HomeContainer>
-        <div>
-          <div>          
-            <h1>Publicações</h1>
-            <span>6 publicações</span>
-          </div>
-          <form>
-            <input type="text" />
-          </form>
-        </div>
+        <HomeContent>
+          <SearchContent>
+            <HeaderSearchForm>          
+              <h3>Publicações</h3>
+              <span>6 publicações</span>
+            </HeaderSearchForm>
+            <input type="text" placeholder="Buscar conteúdo" />
+          </SearchContent>
+          <PostsGithub />
+        </HomeContent>
       </HomeContainer>
     </>
   )
