@@ -1,11 +1,34 @@
+
 import { PostContent } from "./styles";
+import { Issue } from "../../../../types";
+import { differenceInDays, differenceInHours, differenceInMinutes } from 'date-fns';
+
+
+interface PostCardProps {
+  issue: Issue;
+}
 
 interface TruncatedTextProps {
   text: string
   limit?: number
 }
 
-export function PostCard() {
+export function PostCard({ issue }: PostCardProps) {
+
+  function formatTimeAgo(dateString: string): string {
+    const now = new Date();
+    const diffInDays = differenceInDays(now, new Date(dateString));
+    const diffInHours = differenceInHours(now, new Date(dateString));
+    const diffInMinutes = differenceInMinutes(now, new Date(dateString));
+  
+    if (diffInDays > 0) {
+      return `há ${diffInDays} dia${diffInDays > 1 ? 's' : ''} atrás`;
+    } else if (diffInHours > 0) {
+      return `há ${diffInHours} hora${diffInHours > 1 ? 's' : ''} atrás`;
+    } else {
+      return `há ${diffInMinutes} minuto${diffInMinutes > 1 ? 's' : ''} atrás`;
+    }
+  }
 
   function TruncatedText(props: TruncatedTextProps) {
     const maxWords = 27;
@@ -16,16 +39,15 @@ export function PostCard() {
   
     return <p>{truncatedText}</p>;
   }
-
   return (
-    <PostContent>
+    <PostContent href={"/post?id=" + issue.number}>
       <header>
-        <h2>JavaScript data types and data structures</h2>
-        <span>Há 1 dia</span>
+        <h2>{issue.title}</h2>
+        <span>{formatTimeAgo(issue.created_at)}</span>
       </header>
       <section>
         <TruncatedText
-          text="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn."
+          text={issue.body}
         />
       </section>
     </PostContent>

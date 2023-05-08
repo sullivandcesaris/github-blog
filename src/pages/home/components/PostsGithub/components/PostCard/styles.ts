@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
-export const PostContent = styled.div`
+export const PostContent = styled.a`
   padding: 2rem;
   background-color: ${props => props.theme["base-post"]};
   border-radius: 10px;
   outline: 0px solid ${props => props.theme["base-label"]};
+  text-decoration: none;
 
   display: flex;
   flex-direction: column;

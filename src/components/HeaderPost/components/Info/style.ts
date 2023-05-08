@@ -8,13 +8,18 @@ export const InfoContainer = styled.div`
   border-radius: 10px;
 
   display: flex;
-  justify-content: space-between;
   gap: 2rem;
   position: relative;
   z-index: 15;
+
+  img{
+    width: 148px;
+    height: 148px;
+  }
 `;
 
 export const InfoContent = styled.div`
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -31,6 +36,7 @@ export const InfoContent = styled.div`
     display: flex;
     justify-content: space-between;
     outline: none;
+    margin-bottom: 1.2rem;
 
     div {
       color: ${(props) => props.theme.blue};

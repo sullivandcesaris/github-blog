@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const HomeContainer = styled.div`
-  height: 100vh;
   position: relative;
   background-color: ${(props) => props.theme["base-background"]};
   padding-top: 7rem;
@@ -12,7 +11,7 @@ export const HomeContent = styled.div`
   margin: 0 auto;
 `
 
-export const SearchContent = styled.form`
+export const SearchContent = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -45,4 +44,8 @@ export const HeaderSearchForm = styled.header`
     font: 400 0.875rem 'Nunito';
     color: ${props => props.theme["base-span"]};
   }
+`
+
+export const ErrorMsg = styled.p`
+  margin-top: 3rem;
 `
