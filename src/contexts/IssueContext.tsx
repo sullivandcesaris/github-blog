@@ -2,9 +2,11 @@ import { createContext, useEffect, useState } from 'react';
 import { AxiosResponse } from 'axios';
 import { api } from '../lib/axios';
 
-interface Issue {
+export interface Issue {
   number: number;
   title: string;
+  body: string;
+  created_at: string;
   user: {
     login: string;
   };

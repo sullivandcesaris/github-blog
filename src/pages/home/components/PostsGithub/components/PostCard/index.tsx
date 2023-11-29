@@ -1,6 +1,6 @@
 
 import { PostContent } from "./styles";
-import { Issue } from "../../../../types";
+import { Issue } from "../../../../../../contexts/IssueContext";
 import { differenceInDays, differenceInHours, differenceInMinutes } from 'date-fns';
 
 
